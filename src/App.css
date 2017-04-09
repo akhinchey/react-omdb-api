@@ -1,0 +1,10 @@
+#main {
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+#search-field {
+  padding:20px;
+  background-color: #DDD;
+}
