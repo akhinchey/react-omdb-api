@@ -16,7 +16,11 @@ class Search extends Component {
       url: url,
       method: "GET"
     }).done(response => {
-      this.props.updateMovies(response.Search)
+      if (response.Response === "True") {
+        this.props.updateMovies(response.Search)   
+      } else {
+        this.props.updateError();
+      }
     });
   }
 
