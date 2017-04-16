@@ -7,8 +7,6 @@ class Search extends Component {
     e.preventDefault();
     var query = document.getElementById("search-query").value.split(" ").join("+");
     var url = "http://www.omdbapi.com/?s=" + query;
-    debugger;
-    console.log(this)
     this.fetchMovies(url)
     
   }
@@ -19,7 +17,6 @@ class Search extends Component {
       method: "GET"
     }).done(response => {
       this.props.updateMovies(response.Search)
-      console.log(url);
     });
   }
 
