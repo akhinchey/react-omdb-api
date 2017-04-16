@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
-import Result from './Result'
+import Result from './Result';
+import Error from './Error';
 
 class Screen extends Component {
 
@@ -8,20 +9,30 @@ class Screen extends Component {
     super();
     this.state = {
       movieList: [],
+      movieError: "",
     };
   }
 
   updateMovies(movies) {
     this.setState({
-      movieList: movies
+      movieList: movies,
+      movieError: "",
     })
-    // console.log(this.state.movieList);
+  }
+
+  updateError() {
+    this.setState({
+      movieList: [],
+      movieError: "Movies not found."
+    })
   }
 
   render() {
     return (
       <div id="main">
-        <Search updateMovies={this.updateMovies.bind(this)} />
+        <Search updateMovies={this.updateMovies.bind(this)} updateError={this.updateError.bind(this)} />
+      <Error movieError={this.state.movieError}/>
+
         <Result movieList={this.state.movieList}/>
       </div>
       );
