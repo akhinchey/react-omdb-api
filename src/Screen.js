@@ -15,14 +15,14 @@ class Screen extends Component {
     this.setState({
       movieList: movies
     })
-    console.log(this.state.movieList);
+    // console.log(this.state.movieList);
   }
 
   render() {
     return (
       <div id="main">
         <Search updateMovies={this.updateMovies.bind(this)} />
-        <Result />
+        <Result movieList={this.state.movieList}/>
       </div>
       );
   }
