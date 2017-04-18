@@ -5,7 +5,7 @@ class Search extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    var query = document.getElementById("search-query").value.split(" ").join("+");
+    var query = document.getElementById("search-query").value.trim().split(" ").join("+");
     var url = "http://www.omdbapi.com/?s=" + query;
     this.fetchMovies(url)
     
