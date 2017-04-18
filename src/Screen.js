@@ -31,7 +31,8 @@ class Screen extends Component {
     return (
       <div id="main">
         <Search updateMovies={this.updateMovies.bind(this)} updateError={this.updateError.bind(this)} />
-      <Error movieError={this.state.movieError}/>
+        
+        <Error movieError={this.state.movieError}/>
 
         <Result movieList={this.state.movieList}/>
       </div>
